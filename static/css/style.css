@@ -1,0 +1,58 @@
+@import "variables.css";
+@import "reset.css";
+@import "typography.css";
+@import "layout.css";
+@import "components.css";
+@import "sections.css";
+@import "responsive.css";
+
+/* HEADER */
+
+
+
+
+header {
+    width: 100%;
+    background-color:rgb(160, 236, 130);
+    padding: 20px 0;
+    top: 0;
+}
+
+.main_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 100px;
+}
+
+nav ul{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    display: block;
+}
+
+
+.burger{
+    display: none;
+}
+
+
+@media (max-width: 768px){
+    nav {
+        display: none;
+    }
+
+    .burger{
+        display: block;
+    }
+
+}
