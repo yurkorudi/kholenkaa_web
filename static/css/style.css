@@ -27,7 +27,7 @@
 
 header {
     width: 100%;
-    background-color:rgb(188,245,188);
+    background-color:rgb(255, 255, 255);
     padding: 30px 0;
     top: 0;
 }
@@ -109,14 +109,7 @@ nav {
 }
 
 
-@media (max-width: 768px){
-    nav {
-        display: none;
-    }
-
-    .burger{
-        display: flex;
-    }
+@media (max-width:768px){
 
     nav{
         position: fixed;
@@ -126,13 +119,13 @@ nav {
         width: 100%;
         height: calc(100vh - 72px);
 
-        background: rgb(160,236,130);
+        background: rgb(188,245,188);
 
         display: flex;
         justify-content: center;
         align-items: center;
 
-        transition: .3s;
+        transition: left .3s ease;
     }
 
     nav.active{
@@ -144,4 +137,102 @@ nav {
         gap:40px;
     }
 
+    .burger{
+        display:flex;
+    }
+
+}
+
+
+
+/* BODY */
+
+
+.hero {
+    /* background-image: url(../img/grass3.jpg); */
+    background-color: #cccccc;
+    padding: 70px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero__content {
+    flex: 1;
+    max-width: 560px;
+}
+
+.hero__image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero__image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero__title {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.hero__title span {
+    color: #4aa8ff;
+}
+
+.hero__tabs {
+    display: flex;
+    width: fit-content;
+    background: #dfe4ea;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hero__tabs button {
+    padding: 18px 48px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.hero__tabs .active {
+    background: #fff;
+    font-weight: 600;
+}
+
+.hero__info {
+    margin-bottom: 35px;
+    margin-left: 20px;
+    color: #666;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}
+
+.hero__btn {
+    display: inline-block;
+    background: #4aa8ff;
+    color: #fff;
+    padding: 18px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
 }
