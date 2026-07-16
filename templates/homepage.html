@@ -1,41 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Психолог Онлайн — Консультації</title>
+
+      Google Fonts  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+      Main stylesheet  
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
+<body>
 
-<body>  
-    <header>
-        {% include 'header.html'%}
-    </header>
+    {% include 'header.html' %}
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero__container">
+                <div class="hero__content fade-in">
+                    <h1 class="hero__title">
+                        Консультації<br>
+                        з психологом онлайн:
+                        <span>обери безпеку</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Бережний простір для твого внутрішнього світу.
+                        Працюю з тривогою, стосунками, самооцінкою та життєвими кризами.
+                    </p>
+                    <div class="hero__tabs">
+                        <button class="active" data-tab="individual">Для себе</button>
+                        <button data-tab="couple">Для двох</button>
+                    </div>
+                    <div class="hero__info">
+                        <span><span class="info-dot"></span> 50 хвилин</span>
+                        <span><span class="info-dot"></span> від 1000 грн</span>
+                        <span><span class="info-dot"></span> Онлайн</span>
+                    </div>
+                    <a href="#pricing" class="hero__btn">
+                        Обрати формат
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+                <div class="hero__image fade-in">
+                    <div class="hero__image-wrapper">
+                      <img src="../static/img/my2.jpg" alt="Психолог">  
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__image fade-in">
+                      <img src="../static/img/my1.jpg">  
+
+                    </div>
+                    <div class="about__text fade-in">
+                        <span class="section-label">Про мене</span>
+                        <h2>Я — Оленkа,<br>практикуючий психолог</h2>
+                        <p>
+                            Маю понад 5 років досвіду в сфері психології та консультування.
+                            Працюю в бла бла бла бла якихось там хитромудрих підходах.
+                            Вірю що ви віднайдете спокій зі мною (якимось чином) а я 
+                            на вас зароблю 4 жалкі пачкі денєк.
+                        </p>
+                        <p>
+                            Регулярно проходжу супервізію та підвищую кваліфікацію.
+                            Створюю безпечний, безоціночний простір, де можна бути собою.
+                        </p>
+                        <div class="about__highlights">
+                            <div class="about__highlight">
+                                <span class="hl-icon"></span> 5+ років практики
+                            </div>
+                            <div class="about__highlight">
+                                <span class="hl-icon"></span> Сертифікована казявка яка щось таки вміє
+                            </div>
+                            <div class="about__highlight">
+                                <span class="hl-icon"></span> 500+ клієнтів (через 1 рік прблизно)
+                            </div>
+                            <div class="about__highlight">
+                                <span class="hl-icon"></span> Онлайн по всьому світу 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications" id="certifications">
+            <div class="container">
+                <div class="certifications__header fade-in">
+                    <span class="section-label">Кваліфікація</span>
+                    <h2>Освіта та сертифікати</h2>
+                    <p>Постійно навчаюсь, щоб надавати вам найкращу допомогу</p>
+                </div>
+
+                <div class="carousel fade-in" id="certCarousel">
+                    <div class="carousel__track" id="carouselTrack">
+                        <div class="carousel__slide active">
+                            <div class="cert-card">
+                                <div class="cert-card__icon">🎓</div>
+                                <h3>Вища психологічна освіта</h3>
+                                <p class="cert-card__uni">Львівський національний університет Політехніка</p>
+                                <p class="cert-card__degree">Факультет психології, спеціальність "психологія" </p>
+                                <p class="cert-card__year">2020–2025 · Диплом</p>
+                            </div>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="cert-card">
+                                <div class="cert-card__icon"></div>
+                                <h3>Пісько терапія</h3>
+                                <p class="cert-card__uni">Онлайн курс розводняків</p>
+                                <p class="cert-card__degree">Базовий курс (120 год) + просунутий рівень (80 год)</p>
+                                <p class="cert-card__year">2025–2027 · Сертифікат </p>
+                            </div>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="cert-card">
+                                <div class="cert-card__icon"></div>
+                                <h3>Арт терапія</h3>
+                                <p class="cert-card__uni">вчилась в самого фройда</p>
+                                <p class="cert-card__degree">там всяке таке от цікаве</p>
+                                <p class="cert-card__year">1888 · 96 год</p>
+                            </div>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="cert-card">
+                                <div class="cert-card__icon"></div>
+                                <h3>Парне консультування</h3>
+                                <p class="cert-card__uni">з власного досвіду</p>
+                                <p class="cert-card__degree">там всьо буде гууууд</p>
+                                <p class="cert-card__year">2022 · 140 год</p>
+                            </div>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="cert-card">
+                                <div class="cert-card__icon"></div>
+                                <h3>Метафоричні карти</h3>
+                                <p class="cert-card__uni">Ще одні курси</p>
+                                <p class="cert-card__degree">Знайшла в книгарні, сподобались, зацікавилась, вивчила, практикую</p>
+                                <p class="cert-card__year">2024 · 80 год</p>
+                            </div>
+                        </div>
+                    </div>
 
 
-<section class="hero">
-  <div class="container hero__container">
+                    <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Попередній сертифікат">
+                        ‹
+                    </button>
+                    <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Наступний сертифікат">
+                        ›
+                    </button>
 
-    <div class="hero__content">
-      <h1 class="hero__title">
-        Консультації<br>
-        з психологом онлайн:
-        <span>обери безпеку</span>
-      </h1>
+                    <div class="carousel__dots" id="carouselDots"></div>
+                </div>
+            </div>
+        </section>
 
-      <div class="hero__tabs">
-        <button class="active">Для себе</button>
-        <button>Для двох</button>
-      </div>
+        <section class="services" id="services">
+            <div class="container">
+                <div class="services__header fade-in">
+                    <span class="section-label">Послуги</span>
+                    <h2>З чим я працюю</h2>
+                    <p>Кожен формат адаптовано під ваші потреби та темп</p>
+                </div>
+                <div class="services__grid">
+                    <div class="service-card fade-in">
+                        <div class="service-card__icon"></div>
+                        <h3>Індивідуальна терапія</h3>
+                        <p>Робота з тривогою, депресією, вигоранням, самооцінкою та особистісними кризами.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-card__icon"></div>
+                        <h3>Парне консультування</h3>
+                        <p>Допомога в налагодженні комунікації, вирішенні конфліктів та відновленні близькості.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-card__icon"></div>
+                        <h3>Онлайн-сесії</h3>
+                        <p>Зручний формат із будь-якої точки світу через Zoom або Google Meet.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-card__icon"></div>
+                        <h3>Кризові консультації</h3>
+                        <p>Термінова підтримка в складних життєвих ситуаціях та при гострих станах.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="pricing__header fade-in">
+                    <span class="section-label">Вартість</span>
+                    <h2>Прозорі ціни</h2>
+                    <p>Обирайте формат, який підходить саме вам</p>
+                </div>
+                <div class="pricing__grid">
+                    <div class="pricing-card fade-in">
+                        <h3>Разове знайомство</h3>
+                        <p class="price">1000 <span>грн</span></p>
+                        <p class="duration">50 хвилин</p>
+                        <ul>
+                            <li>Первинне знайомство</li>
+                            <li>Оцінка запиту</li>
+                            <li>План подальшої роботи</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline">Записатися</a>
+                    </div>
+                    <div class="pricing-card featured fade-in">
+                        <span class="pricing-badge">Найпопулярніше</span>
+                        <h3>Пакет 5 сесій</h3>
+                        <p class="price">4500 <span>грн</span></p>
+                        <p class="duration">5 × 50 хв · економія 500 грн</p>
+                        <ul>
+                            <li>Глибока опрацювання запиту</li>
+                            <li>Домашні завдання</li>
+                            <li>Підтримка в месенджері</li>
+                            <li>Гнучкий графік</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary">Обрати пакет</a>
+                    </div>
+                    <div class="pricing-card fade-in">
+                        <h3>Парна сесія</h3>
+                        <p class="price">1800 <span>грн</span></p>
+                        <p class="duration">80 хвилин</p>
+                        <ul>
+                            <li>Консультація для пари</li>
+                            <li>Аналіз комунікації</li>
+                            <li>Практичні техніки зближення</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline">Записатися</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <p class="hero__info">50 хв · від 1000 грн</p>
+      <section class="contact" id="contact">
+          <div class="container">
+              <div class="contact__grid contact__grid--centered">
+                  <div class="contact__info fade-in">
+                      <span class="section-label">Контакти</span>
+                      <h2>Зв'яжіться зі мною</h2>
+                      <p>Напишіть, щоб поставити запитання або записатися на першу консультацію. Я відповідаю протягом 24 годин.</p>
+                      <div class="contact__item">
+                          <span class="ci-icon"></span> yurkorudi@gmail.com
+                      </div>
+                      <div class="contact__item">
+                          <span class="ci-icon"></span> +380 68 047 33 41
+                      </div>
+                      <div class="contact__item">
+                          <span class="ci-icon"></span> Онлайн · Україна
+                      </div>
+                      <a href="https://t.me/kholenkaa" target="_blank" class="btn-telegram fade-in">
+                          <span class="btn-telegram__icon"></span>
+                          Написати в Telegram
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
 
-      <a href="#" class="hero__btn">
-        Більше про пропозицію
-      </a>
-    </div>
+    {% include 'footer.html' %}
 
-    <div class="hero__image">
-      <img src="img/hero.png" alt="">
-    </div>
-
-  </div>
-</section>
-
-<script src="../static/js/script.js"></script>
+    <script src="../static/js/script.js"></script>
 </body>
+</html>
