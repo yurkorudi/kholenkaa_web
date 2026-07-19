@@ -893,7 +893,6 @@ section {
 .btn-telegram {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
     background: #2AABEE;
     color: #fff;
     padding: 16px 38px;
