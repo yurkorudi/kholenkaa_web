@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель керування сайтом</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        body { display: flex; background: #f4f6f9; color: #333; }
+        
+        /* Sidebar */
+        .sidebar { width: 260px; height: 100vh; background: #2c3e50; color: #fff; padding: 20px; position: fixed; }
+        .sidebar h2 { font-size: 20px; margin-bottom: 30px; text-align: center; color: #3498db; }
+        .sidebar a { display: block; color: #bdc3c7; padding: 12px; text-decoration: none; border-radius: 4px; margin-bottom: 8px; }
+        .sidebar a:hover, .sidebar a.active { background: #34495e; color: #fff; }
+
+        /* Main Content */
+        .main-content { margin-left: 260px; padding: 40px; width: calc(100% - 260px); }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .btn-add { background: #2ecc71; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600; }
+        
+        /* Table Style */
+        .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .data-table th, .data-table td { padding: 15px; text-align: left; border-bottom: 1px solid #edf2f7; }
+        .data-table th { background: #f8fafc; font-weight: 600; color: #718096; }
+        .actions a { text-decoration: none; margin-right: 10px; font-size: 14px; }
+        .edit { color: #3498db; }
+        .delete { color: #e74c3c; }
+        .badge { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+        .badge.active { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Психолог Адмін</h2>
+        <a href="#" class="active">📊 Консультації</a>
+        <a href="#">🎓 Сертифікати</a>
+        <a href="/" target="_blank">🌐 Перейти на сайт</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Керування консультаціями</h1>
+            <a href="#" class="btn-add">+ Додати послугу</a>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Назва</th>
+                    <th>Ціна</th>
+                    <th>Тривалість</th>
+                    <th>Порядок</th>
+                    <th>Статус</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Сюди за допомогою Jinja2 передаються дані з бази -->
+                {% for consultation in consultations %}
+                <tr>
+                    <td><strong>{{ consultation.title }}</strong></td>
+                    <td>{{ consultation.price }} грн</td>
+                    <td>{{ consultation.duration }}</td>
+                    <td>{{ consultation.sort_order }}</td>
+                    <td>
+                        {% if consultation.active %}
+                            <span class="badge active">Активна</span>
+                        {% else %}
+                            <span class="badge">Прихована</span>
+                        {% endif %}
+                    </td>
+                    <td class="actions">
+                        <a href="#" class="edit">Редагувати</a>
+                        <a href="#" class="delete">Видалити</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

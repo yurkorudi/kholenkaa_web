@@ -709,6 +709,10 @@ section {
     border: 2px solid transparent;
     transition: all var(--transition-base);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 .pricing-card.featured {
     border-color: var(--clr-primary);
@@ -717,6 +721,7 @@ section {
 }
 .pricing-card.featured .pricing-badge {
     display: inline-block;
+    align-self: center;
     background: var(--clr-primary);
     color: #fff;
     font-size: 0.78rem;
@@ -746,6 +751,7 @@ section {
 .pricing-card ul {
     text-align: left;
     margin-bottom: 24px;
+    flex-grow: 1;
 }
 .pricing-card ul li {
     padding: 7px 0;
@@ -770,6 +776,7 @@ section {
     color: var(--clr-primary);
     transition: all var(--transition-base);
     font-size: 0.95rem;
+    text-align: center;
 }
 .btn-outline:hover {
     background: var(--clr-primary);
@@ -785,6 +792,7 @@ section {
     transition: all var(--transition-base);
     font-size: 0.95rem;
     box-shadow: 0 4px 16px rgba(107, 155, 126, 0.3);
+    text-align: center;
 }
 .btn-primary:hover {
     background: var(--clr-primary-dark);
@@ -1027,10 +1035,7 @@ section {
     transform: translateY(0);
 }
 
-
-
-
-/* ========== CERTIFICATIONS CAROUSEL ========== */
+/* ========== CERTIFICATIONS CAROUSEL & FLIP CARD ========== */
 .certifications {
     background: var(--clr-white);
     padding: 90px 0 80px;
@@ -1064,34 +1069,85 @@ section {
     flex: 0 0 100%;
     display: flex;
     justify-content: center;
-    padding: 0 12px;
+    padding: 20px 12px;
     box-sizing: border-box;
+    perspective: 1000px;
 }
 
-/* Card inside slide */
-.cert-card {
-    background: var(--clr-bg-alt);
-    border-radius: var(--radius-lg);
-    padding: 40px 36px;
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-    border: 1px solid var(--clr-border);
-    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+/* Flip card styling */
+.cert-card-perspective {
     width: 100%;
     max-width: 550px;
+    height: 400px;
+    cursor: pointer;
 }
-.cert-card:hover {
+
+.cert-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.cert-card-perspective.flipped .cert-card-inner {
+    transform: rotateY(180deg);
+}
+
+.cert-card-front,
+.cert-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--clr-border);
+    background: var(--clr-bg-alt);
+    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.cert-card-perspective:hover .cert-card-front,
+.cert-card-perspective:hover .cert-card-back {
     box-shadow: var(--shadow-md);
     border-color: var(--clr-primary-light);
 }
+
+.cert-card-front {
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cert-card-back {
+    transform: rotateY(180deg);
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cert-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: calc(var(--radius-lg) - 10px);
+}
+
 .cert-card__icon {
     font-size: 2.8rem;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 .cert-card h3 {
     font-family: var(--font-heading);
     font-size: 1.6rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--clr-text);
 }
 .cert-card__uni {
@@ -1110,6 +1166,15 @@ section {
     color: var(--clr-text-lighter);
     font-size: 0.85rem;
     font-weight: 500;
+}
+
+.cert-card__hint {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--clr-primary);
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
 }
 
 /* Navigation buttons */
@@ -1176,7 +1241,10 @@ section {
         height: 38px;
         font-size: 1.4rem;
     }
-    .cert-card {
+    .cert-card-perspective {
+        height: 360px;
+    }
+    .cert-card-front {
         padding: 28px 22px;
     }
     .cert-card h3 {
